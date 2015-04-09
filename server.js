@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/notes_app');
 var app = express();
+app.use(express.static(__dirname + '/build'));
 app.use(bodyparser.json());
 
 require('./routes/notes_routes')(app);
